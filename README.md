@@ -1,1 +1,1 @@
-# ArenaShooterGame
+# HatShooter
