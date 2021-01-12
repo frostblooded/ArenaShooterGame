@@ -13,9 +13,43 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public AudioSource footstepsAudioSource;
 
     Vector3 velocity;
     bool isGrounded;
+    bool isWalking;
+
+    IEnumerator walkingSoundsCoroutine;
+
+    IEnumerator PlayWalkingSounds()
+    {
+        while(true)
+        {
+            footstepsAudioSource.pitch = Random.Range(0.9f, 1.1f);
+            footstepsAudioSource.Play();
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    void HandleWalkingSounds()
+    {
+        if(isWalking)
+        {
+            if(walkingSoundsCoroutine == null)
+            {
+                walkingSoundsCoroutine = PlayWalkingSounds();
+                StartCoroutine(walkingSoundsCoroutine);
+            }
+        }
+        else
+        {
+            if(walkingSoundsCoroutine != null)
+            {
+                StopCoroutine(walkingSoundsCoroutine);
+                walkingSoundsCoroutine = null;
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 motion = transform.right * x + transform.forward * z;
         controller.Move(motion * speed * Time.deltaTime);
+
+        isWalking = isGrounded && motion != Vector3.zero;
+        HandleWalkingSounds();
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
