@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public float rotationSpeed = 15f;
 
     [HideInInspector]
+    // We expect this to be a normalized vector.
     public Vector3 direction;
 
     void FixedUpdate()
