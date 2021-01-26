@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlagueHat : MonoBehaviour
 {
+    public float secondsBeforeDestroy = 10;
+    public ParticleSystem plagueParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
+        plagueParticleSystem.Play();
+        StartCoroutine(DestroyAfterSeconds(secondsBeforeDestroy));
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DestroyAfterSeconds(float seconds)
     {
-        
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
     }
 }
