@@ -9,6 +9,7 @@ public class StickyProjectile : Projectile
         if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             gameObject.AddComponent<PlagueHat>();
+            Destroy(GetComponent<AudioSource>());
             Destroy(this);
         }
     }
