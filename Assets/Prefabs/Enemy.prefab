@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 5046683847928257608}
   - component: {fileID: 5046683847928257607}
   - component: {fileID: 8368351911994216541}
+  - component: {fileID: 747513179756510472}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -213,6 +214,18 @@ MonoBehaviour:
   maxHealth: 10
   healthBarImage: {fileID: 6325319529708221144}
   currentHealth: 10
+--- !u!114 &747513179756510472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046683847928257606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50484f7cc3b1ac24c98921671a58ef2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6341557846451302935
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +238,7 @@ GameObject:
   - component: {fileID: 7917003081737670013}
   - component: {fileID: 6325319529708221144}
   - component: {fileID: 5519885463045694532}
+  - component: {fileID: 9217059712315279127}
   m_Layer: 5
   m_Name: HealthBarImage
   m_TagString: Untagged
@@ -301,4 +315,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb52d205963ce84f86049226fe3005c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
+--- !u!114 &9217059712315279127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341557846451302935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051adb597e8db13409705e85d320daf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusHolder: {fileID: 747513179756510472}

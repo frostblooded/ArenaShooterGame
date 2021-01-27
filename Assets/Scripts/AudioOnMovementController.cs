@@ -19,7 +19,6 @@ public class AudioOnMovementController : MonoBehaviour
     {
         Vector3 movement = previousPosition - objectTransform.position;
         bool isMoving = movement.magnitude > 0;
-        Debug.Log(movement.magnitude);
 
         if(isMoving)
         {

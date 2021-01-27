@@ -223,7 +223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90b636f51f5e82418d451f198333bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsBeforeDestroy: 10
   plagueParticleSystem: {fileID: 5523138003456880898}
+  plagueRadius: 4
+  plagueDuration: 5
+  plagueDamage: 2
+  plagueTickCooldown: 1
 --- !u!1 &3376265546156435120
 GameObject:
   m_ObjectHideFlags: 0
