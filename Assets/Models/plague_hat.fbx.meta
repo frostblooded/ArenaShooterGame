@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: fa56ee7de05167a42a0ae9ad37d37077
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 8081771851362031732
+    second: PlagueHat|PlagueHatAction
   externalObjects: {}
   materials:
     materialImportMode: 2
