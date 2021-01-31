@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsBeforeDestroy: 10
   plagueParticleSystem: {fileID: 5523138003456880898}
-  plagueRadius: 4
+  plagueRadius: 3.5
   plagueDuration: 5
   plagueDamage: 2
   plagueTickCooldown: 1

@@ -41,4 +41,12 @@ public class PlagueHat : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         Destroy(gameObject);
     }
+
+    // Show plague cloud radius in the inspector visually
+    private void OnDrawGizmosSelected()
+    {
+        // Plague purple color
+        Gizmos.color = new Color(91, 31, 255);
+        Gizmos.DrawWireSphere(transform.position, plagueRadius);
+    }
 }
