@@ -44,6 +44,9 @@ public class PlagueHat : MonoBehaviour
 
         force *= hatTopThrowStrength;
         hatTopRigidBody.AddForce(force, ForceMode.Impulse);
+        hatTopRigidBody.transform.rotation = Quaternion.LookRotation(force.normalized);
+        hatTopRigidBody.transform.Rotate(new Vector3(90, 0, 0));
+
         hatTopThrowParticleSystem.Play();
 
         ApplyPlague();

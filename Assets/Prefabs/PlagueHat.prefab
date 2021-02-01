@@ -9830,7 +9830,7 @@ MonoBehaviour:
   hitParticleSystem: {fileID: 2190504630584905016}
   hatTopThrowParticleSystem: {fileID: 3111043533606495244}
   hatTopRigidBody: {fileID: 928779064188507518}
-  hatTopThrowStrength: 3
+  hatTopThrowStrength: 5
   plagueDuration: 5
   plagueDamage: 2
   plagueTickCooldown: 1
