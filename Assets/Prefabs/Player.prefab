@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 6622961999242098128}
   shotSource: {fileID: 6622962000372418004}
-  plagueHatProjectilePrefab: {fileID: 188011680144759934, guid: 9736ee1abd09ad148b7d7371d79b719c, type: 3}
+  plagueHatProjectilePrefab: {fileID: 5850018159431413846, guid: 9736ee1abd09ad148b7d7371d79b719c, type: 3}
 --- !u!1 &6622961999242098133
 GameObject:
   m_ObjectHideFlags: 0

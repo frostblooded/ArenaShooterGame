@@ -7,6 +7,12 @@ public class PlagueHat : MonoBehaviour
     public float secondsBeforeDestroy = 10;
     public ParticleSystem plagueParticleSystem;
     public float plagueRadius = 4;
+    public AudioSource hitAudioSource;
+    public ParticleSystem hitParticleSystem;
+    public ParticleSystem hatTopThrowParticleSystem;
+
+    public Rigidbody hatTopRigidBody;
+    public float hatTopThrowStrength = 3;
 
     public float plagueDuration = 5;
     public int plagueDamage = 1;
@@ -28,12 +34,29 @@ public class PlagueHat : MonoBehaviour
         }
     }
 
+    IEnumerator ThrowTop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        hatTopRigidBody.useGravity = true;
+
+        // Random force in an upward direction
+        Vector3 force = Random.onUnitSphere + transform.up * 2;
+
+        force *= hatTopThrowStrength;
+        hatTopRigidBody.AddForce(force, ForceMode.Impulse);
+        hatTopThrowParticleSystem.Play();
+
+        ApplyPlague();
+        plagueParticleSystem.Play();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        plagueParticleSystem.Play();
+        hitAudioSource.Play();
+        hitParticleSystem.Play();
         StartCoroutine(DestroyAfterSeconds(secondsBeforeDestroy));
-        ApplyPlague();
+        StartCoroutine(ThrowTop());
     }
 
     IEnumerator DestroyAfterSeconds(float seconds)
