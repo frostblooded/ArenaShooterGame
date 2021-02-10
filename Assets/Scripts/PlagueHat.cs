@@ -9,9 +9,6 @@ public class PlagueHat : MonoBehaviour
     public float plagueRadius = 4;
     public AudioSource hitAudioSource;
     public ParticleSystem hitParticleSystem;
-    public ParticleSystem hatTopThrowParticleSystem;
-
-    public Rigidbody hatTopRigidBody;
     public float hatTopThrowStrength = 3;
 
     public float plagueDuration = 5;
@@ -37,17 +34,6 @@ public class PlagueHat : MonoBehaviour
     IEnumerator ThrowTop()
     {
         yield return new WaitForSeconds(0.5f);
-        hatTopRigidBody.useGravity = true;
-
-        // Random force in an upward direction
-        Vector3 force = Random.onUnitSphere + transform.up * 2;
-
-        force *= hatTopThrowStrength;
-        hatTopRigidBody.AddForce(force, ForceMode.Impulse);
-        hatTopRigidBody.transform.rotation = Quaternion.LookRotation(force.normalized);
-        hatTopRigidBody.transform.Rotate(new Vector3(90, 0, 0));
-
-        hatTopThrowParticleSystem.Play();
 
         ApplyPlague();
         plagueParticleSystem.Play();

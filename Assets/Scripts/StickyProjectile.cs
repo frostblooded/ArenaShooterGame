@@ -6,12 +6,14 @@ public class StickyProjectile : Projectile
 {
     public GameObject stickedObjectPrefab;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            Instantiate(stickedObjectPrefab, transform.position, transform.rotation);
-            Destroy(gameObject);
+            // Instantiate(stickedObjectPrefab, transform.position, transform.rotation);
+            // Destroy(gameObject);
+
+            GetComponent<PlagueHat>().enabled = true;
         }
     }
 }
