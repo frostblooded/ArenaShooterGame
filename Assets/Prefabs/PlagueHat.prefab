@@ -860,7 +860,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -918,7 +918,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 0.4
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -14575,7 +14575,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -16598,12 +16598,12 @@ ParticleSystem:
         m_RotationOrder: 4
     inWorldSpace: 0
   InheritVelocityModule:
-    enabled: 0
-    m_Mode: 0
+    enabled: 1
+    m_Mode: 1
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -19439,7 +19439,9 @@ MonoBehaviour:
   rotationSpeed: 200
   initalForceMultiplier: 20
   direction: {x: 0, y: 0, z: 0}
-  stickedObjectPrefab: {fileID: 5991517769078369081, guid: 583765226780af340adc5c28dd391166, type: 3}
+  hitAudioSource: {fileID: 7956209427020053809}
+  windAudioSource: {fileID: 7131565705319962186}
+  hitParticleSystem: {fileID: 2612306356587444370}
 --- !u!82 &7131565705319962186
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19447,7 +19449,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5850018159431413846}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 733425b0f39a23a4a9fbf04583cdfe3f, type: 3}
@@ -19676,8 +19678,6 @@ MonoBehaviour:
   secondsBeforeDestroy: 10
   plagueParticleSystem: {fileID: 1349882772437501268}
   plagueRadius: 3.5
-  hitAudioSource: {fileID: 7956209427020053809}
-  hitParticleSystem: {fileID: 2612306356587444370}
   hatTopThrowStrength: 5
   plagueDuration: 5
   plagueDamage: 2

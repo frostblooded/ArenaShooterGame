@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class StickyProjectile : Projectile
 {
-    public GameObject stickedObjectPrefab;
+    public AudioSource hitAudioSource;
+    public AudioSource windAudioSource;
+
+    public ParticleSystem hitParticleSystem;
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            // Instantiate(stickedObjectPrefab, transform.position, transform.rotation);
-            // Destroy(gameObject);
-
             GetComponent<PlagueHat>().enabled = true;
+            hitAudioSource.Play();
+            windAudioSource.Stop();
+            hitParticleSystem.Play();
         }
     }
 }

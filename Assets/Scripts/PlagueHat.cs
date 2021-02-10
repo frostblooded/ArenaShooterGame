@@ -7,8 +7,6 @@ public class PlagueHat : MonoBehaviour
     public float secondsBeforeDestroy = 10;
     public ParticleSystem plagueParticleSystem;
     public float plagueRadius = 4;
-    public AudioSource hitAudioSource;
-    public ParticleSystem hitParticleSystem;
     public float hatTopThrowStrength = 3;
 
     public float plagueDuration = 5;
@@ -42,8 +40,6 @@ public class PlagueHat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hitAudioSource.Play();
-        hitParticleSystem.Play();
         StartCoroutine(DestroyAfterSeconds(secondsBeforeDestroy));
         StartCoroutine(ThrowTop());
     }
