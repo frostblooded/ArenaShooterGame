@@ -9,11 +9,21 @@ public class StickyProjectile : Projectile
 
     public ParticleSystem hitParticleSystem;
 
+    Animator animator;
+    PlagueHat plagueHat;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        plagueHat = GetComponent<PlagueHat>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            GetComponent<PlagueHat>().enabled = true;
+            animator.SetBool("open", true);
+            plagueHat.enabled = true;
             hitAudioSource.Play();
             windAudioSource.Stop();
             hitParticleSystem.Play();

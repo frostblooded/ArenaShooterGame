@@ -2,7 +2,28 @@ fileFormatVersion: 2
 guid: fa56ee7de05167a42a0ae9ad37d37077
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -2057771322322484115
+    second: PlagueHat|CylinderAction
+  - first:
+      74: 8000342584861793576
+    second: PlagueHat|open
+  - first:
+      74: 9212581718800902517
+    second: PlagueHatTop|CylinderAction
+  - first:
+      74: -3951714781437254829
+    second: PlagueHatTop|open
+  - first:
+      74: -3778064110608969633
+    second: PlagueSprinkler|CylinderAction
+  - first:
+      74: 7921477105799812630
+    second: PlagueSprinkler|open
+  - first:
+      74: -623603649343465320
+    second: open
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -30,7 +51,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: open
+      takeName: Scene
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
