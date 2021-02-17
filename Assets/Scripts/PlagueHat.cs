@@ -18,6 +18,8 @@ public class PlagueHat : MonoBehaviour
     public int plagueDamage = 1;
     public float plagueTickCooldown = 1;
 
+    Rigidbody rigidBodyComponent;
+
     void ApplyPlague()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, plagueRadius);
@@ -38,6 +40,10 @@ public class PlagueHat : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
+        // right is the direction to which the hat top moves. It is a bit hardcoded like this though.
+        rigidBodyComponent.AddTorque(transform.right * 0.3f, ForceMode.Impulse);
+        rigidBodyComponent.AddForce(Vector3.up, ForceMode.Impulse);
+
         ApplyPlague();
         partyHornAudioSource.Play();
         steamHissAudioSource.Play();
@@ -57,6 +63,7 @@ public class PlagueHat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rigidBodyComponent = GetComponent<Rigidbody>();
         StartCoroutine(DestroyAfterSeconds(secondsBeforeDestroy));
         StartCoroutine(SprayPlague());
     }
