@@ -7,6 +7,7 @@ public class PlayerShooter : MonoBehaviour
     public Transform cameraTransform;
     public Transform shotSource;
     public GameObject plagueHatProjectilePrefab;
+    public GameObject spiderHatProjectilePrefab;
 
     // We need this function so that we can find out in what direction do we need to shoot
     // from the shot source object so that the projectile goes in the direction that the
@@ -30,13 +31,22 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
+    void ShootProjectile(GameObject projectilePrefab)
+    {
+        Projectile projectile = Instantiate(projectilePrefab, shotSource.position, Quaternion.LookRotation(cameraTransform.forward)).GetComponent<Projectile>();
+        projectile.direction = GetThrowMovement();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Projectile plagueHatProjectile = Instantiate(plagueHatProjectilePrefab, shotSource.position, Quaternion.LookRotation(cameraTransform.forward)).GetComponent<Projectile>();
-            plagueHatProjectile.direction = GetThrowMovement();
+            ShootProjectile(plagueHatProjectilePrefab);
+        }
+        else if(Input.GetButtonDown("Fire2"))
+        {
+            ShootProjectile(spiderHatProjectilePrefab);
         }
     }
 }

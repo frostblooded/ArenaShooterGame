@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10f;
-    public float rotationSpeed = 15f;
+    public float speed = 25;
+    public float rotationSpeed = 200;
 
-    public float initalForceMultiplier = 5;
+    public float initalForceMultiplier = 20;
+
+    public AudioSource hitAudioSource;
+    public AudioSource windAudioSource;
+
+    public ParticleSystem hitParticleSystem;
+    public Hat hat;
 
     [HideInInspector]
     public Vector3 direction;
@@ -20,9 +26,26 @@ public class Projectile : MonoBehaviour
         rigidBody.AddForce(direction * initalForceMultiplier, ForceMode.Impulse);
     }
 
-    void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
     {
-        // transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
-        // transform.position += direction * speed * Time.deltaTime;
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            hat.enabled = true;
+
+            if(hitAudioSource)
+            {
+                hitAudioSource.Play();
+            }
+
+            if(windAudioSource)
+            {
+                windAudioSource.Stop();
+            }
+
+            if (hitParticleSystem)
+            {
+                hitParticleSystem.Play();
+            }
+        }
     }
 }

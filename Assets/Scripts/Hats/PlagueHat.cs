@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlagueHat : MonoBehaviour
+public class PlagueHat : Hat
 {
     public ParticleSystem plagueParticleSystem;
     public ParticleSystem confettiParticleSystem;
@@ -18,6 +18,7 @@ public class PlagueHat : MonoBehaviour
     public int plagueDamage = 1;
     public float plagueTickCooldown = 1;
 
+    Animator animator;
     Rigidbody rigidBodyComponent;
 
     void ApplyPlague()
@@ -63,6 +64,9 @@ public class PlagueHat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("open", true);
+
         rigidBodyComponent = GetComponent<Rigidbody>();
         StartCoroutine(DestroyAfterSeconds(secondsBeforeDestroy));
         StartCoroutine(SprayPlague());

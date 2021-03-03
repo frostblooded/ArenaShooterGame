@@ -24287,7 +24287,6 @@ GameObject:
   - component: {fileID: 5850018159431413834}
   - component: {fileID: 5850018159431413835}
   - component: {fileID: 5850018159431413832}
-  - component: {fileID: 1559621922335692982}
   - component: {fileID: 7131565705319962186}
   - component: {fileID: 1832890022537238746}
   - component: {fileID: 7956209427020053809}
@@ -24296,6 +24295,7 @@ GameObject:
   - component: {fileID: 6001235804884064853}
   - component: {fileID: 5007563736980090710}
   - component: {fileID: 8538488006767701941}
+  - component: {fileID: 5472943680573448370}
   m_Layer: 0
   m_Name: PlagueHat
   m_TagString: Untagged
@@ -24373,25 +24373,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1559621922335692982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850018159431413846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067abc4cec789d7448e3978aaa517886, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  rotationSpeed: 200
-  initalForceMultiplier: 20
-  direction: {x: 0, y: 0, z: 0}
-  hitAudioSource: {fileID: 7956209427020053809}
-  windAudioSource: {fileID: 7131565705319962186}
-  hitParticleSystem: {fileID: 2612306356587444370}
 --- !u!82 &7131565705319962186
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24846,6 +24827,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5472943680573448370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850018159431413846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da030237aab2d5844a8b418e0536310a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
+  rotationSpeed: 200
+  initalForceMultiplier: 20
+  hitAudioSource: {fileID: 7956209427020053809}
+  windAudioSource: {fileID: 7131565705319962186}
+  hitParticleSystem: {fileID: 2612306356587444370}
+  hat: {fileID: 4206196035453020225}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &8766447448645707475
 GameObject:
   m_ObjectHideFlags: 0
